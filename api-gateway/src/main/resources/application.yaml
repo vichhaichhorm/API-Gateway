@@ -1,0 +1,31 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8999/eureka/
+
+spring:
+  application:
+    name: api-gateway
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: user-service
+#          uri: lb://user-service
+##          uri: http://localhost:8081
+#          predicates:
+#            - Path= /api/v1/user/**
+##          web filter
+#          filters:
+#            - RewritePath=/user-service/(?<remaining>.*), /${remaining}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui/index.html
+#    urls:
+#      - url: /v3/api-docs
+#        name: API Gateway Service
+#      - url: /user-service/v1/api-docs
+#        name: Test Service
+  api-docs:
+    enabled: true
